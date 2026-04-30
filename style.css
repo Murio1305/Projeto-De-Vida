@@ -1,19 +1,42 @@
 body {
-    font-family: Arial;
+    font-family: 'Segoe UI', sans-serif;
     background: linear-gradient(135deg, #0f172a, #1e3a8a);
     color: white;
     margin: 0;
 }
 
-header {
-    text-align: center;
+/* HEADER */
+.header {
+    display: flex;
+    align-items: center;
+    gap: 20px;
     padding: 20px;
+    background: rgba(0,0,0,0.3);
 }
 
+/* FOTO REDONDA */
+.perfil img {
+    width: 90px;
+    height: 90px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 3px solid #22c55e;
+}
+
+/* TEXTO */
+.info h1 {
+    margin: 0;
+}
+
+.info p {
+    opacity: 0.8;
+}
+
+/* CONTEÚDO */
 main {
     display: flex;
     flex-direction: column;
-    gap: 15px;
+    gap: 20px;
     padding: 20px;
 }
 
@@ -21,9 +44,9 @@ main {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background: rgba(255,255,255,0.1);
+    background: rgba(255,255,255,0.08);
     padding: 20px;
-    border-radius: 12px;
+    border-radius: 15px;
 }
 
 .left {
@@ -36,13 +59,10 @@ main {
 }
 
 .timer {
-    font-size: 18px;
     color: #facc15;
 }
 
 .percent {
-    font-size: 16px;
-    margin-top: 5px;
     color: #22c55e;
 }
 
@@ -51,11 +71,16 @@ main {
     height: 10px;
     background: rgba(255,255,255,0.2);
     border-radius: 10px;
-    margin-top: 10px;
+    margin-top: 5px;
 }
 
 .progress-bar {
     height: 100%;
     width: 0%;
     background: linear-gradient(90deg, #22c55e, #4ade80);
+}
+
+footer {
+    text-align: center;
+    padding: 15px;
 }
