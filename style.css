@@ -5,41 +5,40 @@ body {
     margin: 0;
 }
 
-/* HEADER CENTRAL */
+/* HEADER */
 .header {
     text-align: center;
     padding: 30px;
 }
 
-/* FOTO PERFIL */
+/* FOTO GRANDE */
 .perfil img {
-    width: 140px;
-    height: 140px;
+    width: 180px;
+    height: 180px;
     border-radius: 50%;
     object-fit: cover;
-    border: 4px solid #22c55e;
-    margin-bottom: 10px;
+    border: 5px solid #22c55e;
+    margin: 0 auto 15px;
+    display: block;
     transition: 0.3s;
 }
 
-/* EFEITO NA FOTO */
+/* HOVER FOTO */
 .perfil img:hover {
     transform: scale(1.08);
-    box-shadow: 0 0 20px rgba(34, 197, 94, 0.7);
+    box-shadow: 0 0 25px rgba(34, 197, 94, 0.8);
 }
 
 /* TEXTO */
 .header h1 {
     margin: 10px 0 5px;
-    font-size: 28px;
 }
 
 .descricao {
     opacity: 0.8;
-    font-size: 16px;
 }
 
-/* CONTEÚDO */
+/* MAIN */
 main {
     padding: 20px;
     display: flex;
@@ -47,7 +46,7 @@ main {
     gap: 20px;
 }
 
-/* CARD DAS METAS */
+/* METAS */
 .goal {
     display: flex;
     justify-content: space-between;
@@ -56,14 +55,14 @@ main {
     padding: 20px;
     border-radius: 15px;
     transition: 0.3s;
-    cursor: pointer;
 }
 
-/* HOVER NAS METAS */
+/* HOVER AMARELO */
 .goal:hover {
-    transform: scale(1.03);
+    transform: scale(1.04);
     background: rgba(255,255,255,0.15);
-    box-shadow: 0 0 20px rgba(0,0,0,0.4);
+    border: 2px solid #facc15;
+    box-shadow: 0 0 25px rgba(250, 204, 21, 0.8);
 }
 
 /* LADOS */
@@ -88,7 +87,7 @@ main {
     font-weight: bold;
 }
 
-/* BARRA DE PROGRESSO */
+/* BARRA */
 .progress-container {
     width: 100%;
     height: 10px;
@@ -105,15 +104,9 @@ main {
     transition: width 0.5s;
 }
 
-/* EFEITO EXTRA NA BARRA */
-.goal:hover .progress-bar {
-    background: linear-gradient(90deg, #4ade80, #22c55e, #16a34a);
-}
-
 /* FOOTER */
 footer {
     text-align: center;
     padding: 15px;
     opacity: 0.7;
-    font-size: 14px;
 }
