@@ -43,5 +43,14 @@ window.onload = function () {
 
     rodarMeta("timer1", "percent1", "progress1", "2026-01-01");
     rodarMeta("timer2", "percent2", "progress2", "2026-11-08");
+    rodarMeta("timer3", "percent3", "progress3", "2026-07-01");
+
+    // aparelho dinâmico (5 meses)
+    const hoje = new Date();
+    const cincoMeses = new Date();
+    cincoMeses.setMonth(hoje.getMonth() + 5);
+    rodarMeta("timer4", "percent4", "progress4", cincoMeses);
+
+    rodarMeta("timer5", "percent5", "progress5", "2026-09-01");
 
 };
