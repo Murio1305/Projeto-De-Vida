@@ -11,9 +11,9 @@ body {
     padding: 30px;
 }
 
-/* FOTO */
+/* FOTO PERFIL */
 .perfil img {
-    width: 140px;  /* aumentei */
+    width: 140px;
     height: 140px;
     border-radius: 50%;
     object-fit: cover;
@@ -22,20 +22,21 @@ body {
     transition: 0.3s;
 }
 
-/* efeito ao passar o mouse */
+/* EFEITO NA FOTO */
 .perfil img:hover {
     transform: scale(1.08);
     box-shadow: 0 0 20px rgba(34, 197, 94, 0.7);
-}
 }
 
 /* TEXTO */
 .header h1 {
     margin: 10px 0 5px;
+    font-size: 28px;
 }
 
 .descricao {
     opacity: 0.8;
+    font-size: 16px;
 }
 
 /* CONTEÚDO */
@@ -46,6 +47,7 @@ main {
     gap: 20px;
 }
 
+/* CARD DAS METAS */
 .goal {
     display: flex;
     justify-content: space-between;
@@ -54,12 +56,17 @@ main {
     padding: 20px;
     border-radius: 15px;
     transition: 0.3s;
+    cursor: pointer;
 }
 
+/* HOVER NAS METAS */
 .goal:hover {
-    transform: scale(1.02);
+    transform: scale(1.03);
+    background: rgba(255,255,255,0.15);
+    box-shadow: 0 0 20px rgba(0,0,0,0.4);
 }
 
+/* LADOS */
 .left {
     width: 50%;
 }
@@ -69,15 +76,19 @@ main {
     text-align: right;
 }
 
+/* TIMER */
 .timer {
     color: #facc15;
+    font-weight: bold;
 }
 
+/* PORCENTAGEM */
 .percent {
     color: #22c55e;
     font-weight: bold;
 }
 
+/* BARRA DE PROGRESSO */
 .progress-container {
     width: 100%;
     height: 10px;
@@ -91,32 +102,18 @@ main {
     width: 0%;
     background: linear-gradient(90deg, #22c55e, #4ade80);
     border-radius: 10px;
+    transition: width 0.5s;
 }
 
+/* EFEITO EXTRA NA BARRA */
+.goal:hover .progress-bar {
+    background: linear-gradient(90deg, #4ade80, #22c55e, #16a34a);
+}
+
+/* FOOTER */
 footer {
     text-align: center;
     padding: 15px;
     opacity: 0.7;
-}
-
-.goal {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    background: rgba(255,255,255,0.08);
-    padding: 20px;
-    border-radius: 15px;
-    transition: 0.3s;
-    cursor: pointer;
-}
-
-/* efeito hover */
-.goal:hover {
-    transform: scale(1.03);
-    background: rgba(255,255,255,0.15);
-    box-shadow: 0 0 20px rgba(0,0,0,0.4);
-}
-
-.goal:hover .progress-bar {
-    background: linear-gradient(90deg, #4ade80, #22c55e, #16a34a);
+    font-size: 14px;
 }
