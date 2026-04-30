@@ -1,55 +1,52 @@
 window.onload = function () {
 
-    function rodarMeta(timerId, percentId, progressId, dataFinal) {
+    function updateTimer(targetDate, timerId, progressId, percentId) {
 
-        const inicio = new Date("2025-01-01").getTime();
-        const fim = new Date(dataFinal).getTime();
+        const start = new Date("2025-01-01").getTime();
+        const target = new Date(targetDate).getTime();
+        const total = target - start;
 
-        setInterval(() => {
+        setInterval(function () {
 
-            const agora = new Date().getTime();
-            const distancia = fim - agora;
+            const now = new Date().getTime();
+            const distance = target - now;
 
             const timer = document.getElementById(timerId);
+            const progress = document.getElementById(progressId);
             const percent = document.getElementById(percentId);
-            const barra = document.getElementById(progressId);
 
-            if (!timer || !percent || !barra) return;
+            if (!timer || !progress || !percent) return;
 
-            if (distancia < 0) {
+            if (distance < 0) {
                 timer.innerHTML = "Meta concluída!";
+                progress.style.width = "100%";
                 percent.innerHTML = "100%";
-                barra.style.width = "100%";
                 return;
             }
 
-            const dias = Math.floor(distancia / (1000 * 60 * 60 * 24));
-            const horas = Math.floor((distancia % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-            const minutos = Math.floor((distancia % (1000 * 60 * 60)) / (1000 * 60));
+            // TEMPO
+            const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
 
-            timer.innerHTML = `${dias}d ${horas}h ${minutos}m`;
+            timer.innerHTML = days + "d " + hours + "h " + minutes + "m";
 
-            let progresso = ((agora - inicio) / (fim - inicio)) * 100;
+            // PROGRESSO
+            let progressValue = ((now - start) / total) * 100;
 
-            if (progresso < 0) progresso = 0;
-            if (progresso > 100) progresso = 100;
+            if (progressValue < 0) progressValue = 0;
+            if (progressValue > 100) progressValue = 100;
 
-            percent.innerHTML = progresso.toFixed(1) + "%";
-            barra.style.width = progresso + "%";
+            progress.style.width = progressValue + "%";
+            percent.innerHTML = progressValue.toFixed(1) + "%";
 
         }, 1000);
     }
 
-    rodarMeta("timer1", "percent1", "progress1", "2026-01-01");
-    rodarMeta("timer2", "percent2", "progress2", "2025-12-31");
-    rodarMeta("timer3", "percent3", "progress3", "2026-07-01");
-    rodarMeta("timer4", "percent4", "progress4", "2026-11-08");
-    rodarMeta("timer5", "percent5", "progress5", "2026-12-15");
-    const hoje = new Date();
-const cincoMeses = new Date();
-cincoMeses.setMonth(hoje.getMonth() + 5);
-
-rodarMeta("timer6", "percent6", "progress6", cincoMeses);
-    rodarMeta("timer7", "percent7", "progress7", "2026-09-01");
+    updateTimer("2026-01-01", "timer1", "progress1", "percent1");
+    updateTimer("2025-12-31", "timer2", "progress2", "percent2");
+    updateTimer("2026-12-31", "timer3", "progress3", "percent3");
+    updateTimer("2026-11-08", "timer4", "progress4", "percent4");
+    updateTimer("2026-12-15", "timer5", "progress5", "percent5");
 
 };
